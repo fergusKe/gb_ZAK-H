@@ -1,0 +1,57 @@
+#nav .current {
+	background: #EEE;
+}
+#container:after {
+	content: '';
+	display: table;
+	clear: both;
+	*zoom: 1;
+}
+#mySlider {
+	margin-top: 60px;
+	cursor: pointer;
+}
+#mySlider img {
+	width: 1119px;
+	height: 590px;
+	padding: 0 40px;
+}
+#title {
+	text-align: center;
+	font-size: 34px;
+	margin-top: 30px;
+	font-weight: 100;
+}
+#intro {
+	float: left;
+	overflow: hidden;
+}
+#intro img {
+	margin-left: 25px;
+}
+#info {
+	float: left;
+	width: 450px;
+	margin-top: 50px;
+	font-size: 24px;
+}
+#info .designConcept {
+	width: 450px;
+	height: 350px;
+	text-align: center;
+}
+#info .youtube {
+	width: 450px;
+	height: 350px;
+	text-align: center;
+}
+
+#product {
+	display: inline-block;
+	width: 425px;
+}
+#product img {
+	display: block;
+	width: 425px;
+	margin-top: -8px;
+}

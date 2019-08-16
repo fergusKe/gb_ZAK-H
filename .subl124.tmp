@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/about.css">
+    <title>ZAK-H</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <a id="logo" href="index.htm"><img src="img/index/LOGO.jpg"></a>
+            <div id="icon">
+                <ul>
+                    <li><a href="javascript:;"><img src="img/index/photo.png"></a></li>
+                    <li id="shopping">
+                        <a href="javascript:;"><img src="img/index/Bag.png"></a>
+                        <div class="shoppingList">
+                            <!-- <p>沒有商品</p> -->
+                            <p>SUBTOTAL</p>
+                            <p>TWD 0</p>
+                            <div class="check">CHECKOUT</div>
+                        </div>
+                    </li>
+                    <li><a href="javascript:;"><img src="img/index/find.png"></a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div id="container">
+            <div id="intro">
+                <h2 class="title">為何成立ZAK-H品牌?</h2>
+                <p class="chinese">國際新銳設計師的平台邀請，帶領針對亞洲，歐洲及北美市場上的消費者提供最新設計的傢俱產品，讓國際上文創產品設計有 更進一步文化交流及成長空間。不管是在技術上的指導或是產品設計的交流。讓台灣品牌走向國際化。產品本身是在台灣製造 MIT，品質上的控管及精異求精的技術。讓國際知名設計師能夠信任台灣的生產支援。相對的也提供台灣廠商能夠在技術上， 學習尖端的技術指導。
+                </p>
+                <p class="english">Invite international Cutting-Edge designers to be part of the Platform that shares and exchanges their design concept. Led by the latest design products for the consumer within Asia, Europe, and North America market. Furthermore in exchanges of the cultural idea and design Whether exchange of guidance or product design. MIT, Made in Taiwan, product itself is manufactured in Taiwan. Quality Control of logistic and Refined on skillnes of prodcution. Designers believed in the production support of Taiwan. Relatively manufacturers can also appreciate cutting-edge technical guidance and design.</p>
+            </div>
+        </div>
+        <div id="nav">
+            <ul>
+                <a href="about.htm"><li class="current">ABOUT US</li></a>
+                <a href="designer.htm">
+                    <li>DESIGNER</li>
+                </a>
+                <a href="product.htm">
+                    <li>PRODUCTS</li>
+                </a>
+                <a href="media.htm">
+                    <li>MEDIA</li>
+                </a>
+                <a href="upcoming.htm">
+                    <li>UPCOMING EVENT</li>
+                </a>
+                <a href="contact.htm">
+                    <li>CONTACT US</li>
+                </a>
+            </ul>
+            <p style="clear: both"></p>
+        </div>
+    </div>
+    <div id="footer">
+        <div id="footerArea">
+            <div class="footerImg">
+                <img src="img/index/footer.png">
+            </div>
+        </div>
+        <div id="copyright">
+            <p>Mon~Fri AM09:00~PM12:00 / PM13:00~PM17:00 &nbsp;Phone:04-24525998 COPYRIGHT@2015 ZAK-H CO.LTD.ALL RIGHT RESERVED.</p>
+        </div>
+    </div>
+
+</body>
+<script src="script/jquery.1.9.0.min.js"></script>
+<script>
+var body_H = 1021;
+    var window_H = $(window).height();
+    var footer_H = $('#footer').height() + 3;
+    var scrollVal = $(window).scrollTop(); //捲軸距離頁面頂端的高度
+    var fixed_position = 0;
+    var real_H = 0;
+
+    $(window).scroll(function() {
+        scrollVal = $(window).scrollTop();
+        real_H = window_H + scrollVal;
+        fixed_position = body_H - footer_H;
+
+        if ( real_H >= fixed_position ) {
+            $('#nav').css({
+                bottom: (real_H - fixed_position)
+            });
+        }else {
+            $('#nav').css({
+                bottom: 0
+            });
+        }
+        
+    }).scroll();
+</script>
+
+</html>

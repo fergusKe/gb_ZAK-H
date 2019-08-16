@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>ZAK-H</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <a href="index.htm">
+                <!-- <div class="logoBefore"></div> -->
+                <div class="mask"></div>
+                <img src="img/index/LOGO.jpg">
+                <!-- <div class="logoAfter"></div> -->
+            </a>
+        </div>
+        <div id="container">
+            <div id="intro">
+                <div class="introCont">
+                    <p>A design defines who they are independently as designer, we want to share their uniqueness with the latest design around the world.</p>
+                </div>
+            </div>
+            <div id="language">
+                <ul>
+                    <a href="designer.htm">
+                        <li>中文</li>
+                    </a>
+                    <a href="designer.htm">
+                        <li>English</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="footer">
+        <div class="addTop"></div>
+        <div id="footerArea">
+            <div class="footerImg">
+                <img src="img/index/footer.png">
+            </div>
+        </div>
+        <div id="copyright">
+            <p>Mon~Fri AM09:00~PM12:00 / PM13:00~PM17:00 &nbsp;Phone:04-24525998 COPYRIGHT@2015 ZAK-H CO.LTD.ALL RIGHT RESERVED.</p>
+        </div>
+        <div class="addBottom"></div>
+    </div>
+
+</body>
+<script src="script/jquery.1.9.0.min.js"></script>
+<script>
+$(function() {
+    var body_H = document.body.offsetHeight;
+    var window_H = $(window).height();
+    var window_W = $(window).width();
+    var footer_H = $('#footer').height() + 3;
+    var scrollVal = $(window).scrollTop(); //捲軸距離頁面頂端的高度
+    var fixed_position = 0;
+    var real_H = 0;
+
+    // footer效果
+    $(window).resize(function() {
+        window_W = $(window).width();
+        if (window_W < 1200) {
+            $('#footer .addTop').css({
+                'width': (1200 - window_W) + 'px',
+                'right': (-(1200 - window_W)) + 'px'
+            });
+            $('#footer .addBottom').css({
+                'width': (1200 - window_W) + 'px',
+                'right': (-(1200 - window_W)) + 'px'
+            });
+        } else {
+            $('#footer .addTop').css({
+                'width': 0
+            });
+            $('#footer .addBottom').css({
+                'width': 0
+            });
+        }
+    }).resize();
+
+
+    // nav效果
+    $(window).scroll(function() {
+        // nav在scroll時會停在footer之上
+        scrollVal = $(window).scrollTop();
+        real_H = window_H + scrollVal;
+        fixed_position = body_H - footer_H;
+        if (real_H >= fixed_position) {
+            $('#nav').css({
+                bottom: (real_H - fixed_position)
+            });
+        } else {
+            $('#nav').css({
+                bottom: 0
+            });
+        }
+
+        // 寬小於1200，左右scroll時不要fixed(被遮住的地方還是看不到)
+        if (window_W < 1200) {
+            scrollLeft = $(window).scrollLeft();
+            $('#nav').css(
+                'left', -scrollLeft
+            )
+        }
+    }).scroll();
+    // Run();
+
+    // function Run() {
+    //     $('#intro p').animate({
+    //         right: '+=1470px'
+    //     }, 20000);
+
+    //     Back();
+    // };
+
+    // function Back() {
+    //     $('#intro p').animate({
+    //         right: '-200px'
+    //     }, 0);
+
+    //     Run();
+    // };
+})
+</script>
+
+</html>

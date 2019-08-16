@@ -1,0 +1,40 @@
+#nav .current {
+	background: #EEE;
+}
+#container {
+	padding-top: 30px;
+}
+#intro {
+	float: left;
+	overflow: hidden;
+	padding-top: 17px;
+	height: 413px;
+}
+#intro img {
+	margin-left: 20px;
+	margin-top: 35px;
+}
+#product {
+	display: inline-block;
+	width: 870px;
+	padding-top: 64px;
+	font-size: 0;
+}
+#product img {
+	display: inline-block;
+	box-shadow: 3px 1px 10px rgba(0,0,0, 0);
+	cursor: pointer;
+	margin-bottom: 40px;
+	transition: .3s;
+}
+#product img:hover {
+	box-shadow: 3px 1px 10px rgba(0,0,0,.4);
+}
+#product img:nth-child(odd) {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+#footer {
+	margin-top: 150px;
+}

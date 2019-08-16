@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <title>ZAK-H</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <a id="logo" href="index.htm"><img src="img/index/LOGO.jpg"></a>
+            <div id="icon">
+                <ul>
+                    <li><a href="javascript:;"><img src="img/index/photo.png"></a></li>
+                    <li id="shopping">
+                        <a href="javascript:;"><img src="img/index/Bag.png"></a>
+                        <div class="shoppingList">
+                            <p style="margin-top: 30px;">SUBTOTAL</p>
+                            <p>TWD 0</p>
+                            <div class="check">CHECKOUT</div>
+                        </div>
+                    </li>
+                    <li><a href="javascript:;"><img src="img/index/find.png"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="container">
+			<div id="intro">
+				<div id="info">
+                    <h2>ZAK-H</h2> 
+                    <p>T: +886 3 4906580</p> 
+                    <p>F: +886 3 4906341</p>  
+                    <p>No.66-3, Sec. 1 Shuangfu Street, Pingzheng City</p>
+                    <p>Mail: info@zak-h.com</p>        
+                </div>
+                <div class="separate"></div>
+                <div id="message">
+                    <table>
+                        <tr style="height: 35px;">
+                            <td>Name：</td>
+                            <td><input style="height: 25px;width: 200px;" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td style="height: 35px;">Phone：</td>
+                            <td><input style="height: 25px;width: 200px;" type="text"></td>
+                        </tr>
+                        <tr style="height: 35px;">
+                            <td>E-mail Address：</td>
+                            <td><input style="height: 25px;width: 200px;" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td>Message：</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><textarea name="" id="" cols="30" rows="10" style="width: 328px;"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="text-align: right;"><input style="width: 100px;height: 36px;background: #000;color: #EEE;font-size: 20px;cursor: pointer;" value="SEND" type="button"></td>
+                        </tr>
+                    </table>
+                </div>
+			</div>
+        </div>
+        <div id="nav">
+            <ul>
+                <a href="about.htm"><li>ABOUT US</li></a>
+                <a href="designer.htm"><li>DESIGNER</li></a>
+                <a href="product.htm"><li>PRODUCTS</li></a>
+                <a href="media.htm"><li>MEDIA</li></a>
+                <a href="upcoming.htm"><li>UPCOMING EVENT</li></a>
+                <a href="contact.htm"><li class="current">CONTACT US</li></a>
+            </ul>
+            <p style="clear: both"></p>
+        </div>
+    </div>
+    </div>
+    <div id="footer">
+        <div class="addTop"></div>
+        <div id="footerArea">
+            <div class="footerImg">
+                <img src="img/index/footer.png">
+            </div>
+        </div>
+        <div id="copyright">
+            <p>Mon~Fri AM09:00~PM12:00 / PM13:00~PM17:00 &nbsp;Phone:04-24525998 COPYRIGHT@2015 ZAK-H CO.LTD.ALL RIGHT RESERVED.</p>
+        </div>
+        <div class="addBottom"></div>
+    </div>
+
+</body>
+<script src="script/jquery.1.9.0.min.js"></script>
+<script>
+    var body_H = document.body.offsetHeight;
+    var window_H = $(window).height();
+    var footer_H = $('#footer').height() + 3;
+    var scrollVal = $(window).scrollTop(); //捲軸距離頁面頂端的高度
+    var fixed_position = 0;
+    var real_H = 0;
+
+    // footer效果
+    $(window).resize(function() {
+        window_W = $(window).width();
+        console.log('window_W='+window_W);
+        if (window_W < 1200) {
+            console.log('1200 - window_H='+1200 - window_H);
+            $('#footer .addTop').css({
+                'width': (1200 - window_W) + 'px',
+                'right': (-(1200 - window_W)) + 'px'
+            });
+            $('#footer .addBottom').css({
+                'width': (1200 - window_W) + 'px',
+                'right': (-(1200 - window_W)) + 'px'
+            });
+        } else {
+            $('#footer .addTop').css({
+                'width': 0
+            });
+            $('#footer .addBottom').css({
+                'width': 0
+            });
+        }
+    }).resize();
+
+
+    // nav效果
+    $(window).scroll(function() {
+        // nav在scroll時會停在footer之上
+        body_H = document.body.offsetHeight;
+        scrollVal = $(window).scrollTop();
+        real_H = window_H + scrollVal;
+        fixed_position = body_H - footer_H;
+        if (real_H >= fixed_position) {
+            $('#nav').css({
+                bottom: (real_H - fixed_position)
+            });
+        } else {
+            $('#nav').css({
+                bottom: 0
+            });
+        }
+
+        // 寬小於1200，左右scroll時不要fixed(被遮住的地方還是看不到)
+        if (window_W < 1200) {
+            scrollLeft = $(window).scrollLeft();
+            $('#nav').css(
+                'left', -scrollLeft
+            )
+        }
+    }).scroll();
+</script>
+
+</html>

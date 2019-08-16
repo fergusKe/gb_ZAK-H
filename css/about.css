@@ -1,0 +1,30 @@
+#nav .current {
+	background: #EEE;
+}
+#ourDesigners {
+	margin: 50px 0;
+	text-align: center;
+	font-size: 35px;
+	font-family: monospace;
+}
+#intro {
+	width: 1045px;
+	margin: 90px auto 0;
+	color: #333;
+}
+.title {
+	font-family: '微軟正黑體';
+	font-weight: 100;
+}
+.chinese {
+	font-family: '微軟正黑體';
+	margin-top: 10px;
+	line-height: 30px;
+}
+.english {
+	font-family: sans-serif;
+	margin-top: 15px;
+	line-height: 30px;
+	text-align: justify;　/*　Firefox到此即可對齊　*/
+	text-justify: auto;　/*　IE需再加上此行　*/
+}

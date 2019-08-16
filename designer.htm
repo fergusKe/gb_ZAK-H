@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/designer.css">
+    <link rel="stylesheet" type="text/css" href="css/Slider.css">
+    <title>ZAK-H</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <a id="logo" href="index.htm"><img src="img/index/LOGO.jpg">
+            </a>
+            <div id="icon">
+                <ul>
+                    <li>
+                        <a href="javascript:;"><img src="img/index/photo.png">
+                        </a>
+                    </li>
+                    <li id="shopping">
+                        <a href="javascript:;"><img src="img/index/Bag.png">
+                        </a>
+                        <div class="shoppingList">
+                            <p style="margin-top: 30px;">SUBTOTAL</p>
+                            <p>TWD 0</p>
+                            <div class="check">CHECKOUT</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="javascript:;"><img src="img/index/find.png">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="container">
+            <div id="mySlider">
+                <div class="sliderShow">
+                    <ul>
+                        <li>
+                            <a href="designer_product.htm">
+                                <div class="imgArea">
+                                    <div class="designerImg">
+                                        <img src="img/designer/photo1_01.jpg">
+                                    </div>
+                                    <div class="intro">
+                                        <img src="img/designer/photo1_02.png">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="designer_product.htm">
+                                <div class="imgArea">
+                                    <div class="designerImg">
+                                        <img src="img/designer/photo2_01.jpg">
+                                    </div>
+                                    <div class="intro no_info">
+                                        <img src="img/designer/photo2_02.png">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="designer_product.htm">
+                                <div class="imgArea">
+                                    <div class="designerImg">
+                                        <img src="img/designer/photo3_01.jpg">
+                                    </div>
+                                    <div class="intro no_info">
+                                        <img src="img/designer/photo3_02.png">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="designer_product.htm">
+                                <div class="imgArea">
+                                    <div class="designerImg">
+                                        <img src="img/designer/photo4_01.jpg">
+                                    </div>
+                                    <div class="intro">
+                                        <img src="img/designer/photo4_02.png">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="designer_product.htm">
+                                <div class="imgArea">
+                                    <div class="designerImg">
+                                        <img src="img/designer/photo5_01.jpg">
+                                    </div>
+                                    <div class="intro no_info">
+                                        <img src="img/designer/photo5_02.png">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="designer_product.htm">
+                                <div class="imgArea">
+                                    <div class="designerImg">
+                                        <img src="img/designer/photo6_01.jpg">
+                                    </div>
+                                    <div class="intro no_info">
+                                        <img src="img/designer/photo6_02.png">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="designer_product.htm">
+                                <div class="imgArea">
+                                    <div class="designerImg">
+                                        <img src="img/designer/photo7_01.jpg">
+                                    </div>
+                                    <div class="intro">
+                                        <img src="img/designer/photo7_02.png">
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="nav">
+            <ul>
+                <a href="about.htm">
+                    <li>ABOUT US</li>
+                </a>
+                <a href="designer.htm">
+                    <li class="current">DESIGNER</li>
+                </a>
+                <a href="product.htm">
+                    <li>PRODUCTS</li>
+                </a>
+                <a href="media.htm">
+                    <li>MEDIA</li>
+                </a>
+                <a href="upcoming.htm">
+                    <li>UPCOMING EVENT</li>
+                </a>
+                <a href="contact.htm">
+                    <li>CONTACT US</li>
+                </a>
+            </ul>
+            <p style="clear: both"></p>
+        </div>
+    </div>
+    </div>
+    <div id="footer">
+        <div class="addTop"></div>
+        <div id="footerArea">
+            <div class="footerImg">
+                <img src="img/index/footer.png">
+            </div>
+        </div>
+        <div id="copyright">
+            <p>Mon~Fri AM09:00~PM12:00 / PM13:00~PM17:00 &nbsp;Phone:04-24525998 COPYRIGHT@2015 ZAK-H CO.LTD.ALL RIGHT RESERVED.</p>
+        </div>
+        <div class="addBottom"></div>
+    </div>
+
+</body>
+<script src="script/jquery.1.9.0.min.js"></script>
+<script src="script/jquery.Slider.js"></script>
+<script>
+$(function() {
+
+    // slider效果
+    $('#mySlider').suSlider({
+        interval: 3000,
+        width: 1048,
+        height: 948
+    });
+
+    var body_H = document.body.offsetHeight;
+    var window_H = $(window).height();
+    var window_W = $(window).width();
+    var footer_H = $('#footer').height() + 3;
+    var scrollVal = $(window).scrollTop(); //捲軸距離頁面頂端的高度
+    var fixed_position = 0;
+    var real_H = 0;
+    // var nav_H = $('#nav').height();
+    // var footer_Top = $('#footer').offset().top; //選單距離頁面頂端的高度
+    // console.log('window_H='+window_H);
+
+
+    // footer效果
+    $(window).resize(function() {
+        window_W = $(window).width();
+        console.log('window_W='+window_W);
+        if (window_W < 1200) {
+            console.log('1200 - window_H='+1200 - window_H);
+            $('#footer .addTop').css({
+                'width': (1200 - window_W) + 'px',
+                'right': (-(1200 - window_W)) + 'px'
+            });
+            $('#footer .addBottom').css({
+                'width': (1200 - window_W) + 'px',
+                'right': (-(1200 - window_W)) + 'px'
+            });
+        } else {
+            $('#footer .addTop').css({
+                'width': 0
+            });
+            $('#footer .addBottom').css({
+                'width': 0
+            });
+        }
+    }).resize();
+
+
+    // nav效果
+    $(window).scroll(function() {
+        // nav在scroll時會停在footer之上
+        body_H = document.body.offsetHeight;
+        scrollVal = $(window).scrollTop();
+        real_H = window_H + scrollVal;
+        fixed_position = body_H - footer_H;
+        if (real_H >= fixed_position) {
+            $('#nav').css({
+                bottom: (real_H - fixed_position)
+            });
+        } else {
+            $('#nav').css({
+                bottom: 0
+            });
+        }
+
+        // 寬小於1200，左右scroll時不要fixed(被遮住的地方還是看不到)
+        if (window_W < 1200) {
+            scrollLeft = $(window).scrollLeft();
+            $('#nav').css(
+                'left', -scrollLeft
+            )
+        }
+    }).scroll();
+
+
+    
+});
+</script>
+
+</html>
